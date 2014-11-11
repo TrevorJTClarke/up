@@ -50,28 +50,58 @@ UP.run(function($ionicPlatform) {
         }
     })
 
-    // shows the creation modal screens
+
+    // TODO: SCRAP THESE ROUTES
     .state('create', {
-        url: "/create",
-        abstract: true,
-        templateUrl: "templates/create.html"
-    })
-    .state('create.customize', {
-        url: '/customize',
+        url: '/create',
         views: {
-            'create-customize': {
-                templateUrl: 'create-customize.html',
+            'create': {
+                templateUrl: 'templates/create.html',
                 controller: 'CreateCtrl'
             }
         }
     })
-
-    // shows the Receive modal screens
     .state('receive', {
-        url: "/receive",
-        abstract: true,
-        templateUrl: "templates/receive.html"
-    });
+        url: '/receive',
+        views: {
+            'receive': {
+                templateUrl: 'templates/receive.html',
+                controller: 'ReceiveCtrl'
+            }
+        }
+    })
+    .state('mood', {
+        url: '/mood',
+        views: {
+            'mood': {
+                templateUrl: 'templates/mood.html',
+                controller: 'MoodCtrl'
+            }
+        }
+    })
+
+    // // shows the creation modal screens
+    // .state('create', {
+    //     url: "/create",
+    //     abstract: true,
+    //     templateUrl: "templates/create.html"
+    // })
+    // .state('create.customize', {
+    //     url: '/customize',
+    //     views: {
+    //         'create-customize': {
+    //             templateUrl: 'create-customize.html',
+    //             controller: 'CreateCtrl'
+    //         }
+    //     }
+    // })
+
+    // // shows the Receive modal screens
+    // .state('receive', {
+    //     url: "/receive",
+    //     abstract: true,
+    //     templateUrl: "templates/receive.html"
+    // });
     // .state('receive.schedule', {
     //     url: '/schedule',
     //     views: {
@@ -81,6 +111,7 @@ UP.run(function($ionicPlatform) {
     //         }
     //     }
     // });
+    ;
 
     $urlRouterProvider.otherwise('/global');
 

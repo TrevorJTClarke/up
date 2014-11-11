@@ -14,5 +14,5 @@ UP.factory('Feeds', function() {
         all: function() {
             return feeds;
         }
-    }
+    };
 });
