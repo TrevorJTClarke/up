@@ -4,6 +4,10 @@
 // setup ionic css
 @import "scss/ionic.app.scss";
 
+// modules
+@import
+  "modules/moods";
+
 // main layouts
 @import
   "pages/tabs",
