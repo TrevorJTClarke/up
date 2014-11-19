@@ -63,25 +63,27 @@ UP.run(function($ionicPlatform) {
             }
         }
     })
-
-
-    // TODO: SCRAP THESE ROUTES
-    .state('create', {
+    // Creation flow
+    .state('main.create', {
         url: '/create',
-        templateUrl: 'templates/create.html'
-        // controller: 'CreateCtrl'
+        views: {
+            'create': {
+                templateUrl: 'templates/create.html',
+                controller: 'CreateCtrl'
+            }
+        }
     })
-    .state('receive', {
+    // Receive flow
+    .state('main.receive', {
         url: '/receive',
-        templateUrl: 'templates/receive.html',
-        controller: 'ReceiveCtrl'
+        views: {
+            'receive': {
+                templateUrl: 'templates/receive.html',
+                controller: 'ReceiveCtrl'
+            }
+        }
     })
-    .state('mood', {
-        url: '/mood',
-        templateUrl: 'templates/mood.html',
-        controller: 'MoodCtrl'
-    })
-
+    
     
     // Standard routes
     .state('login', {
@@ -97,6 +99,7 @@ UP.run(function($ionicPlatform) {
 
 
     ;
+
 
     // $urlRouterProvider.otherwise('/main/global');
     $urlRouterProvider.otherwise('/home');
@@ -116,11 +119,12 @@ UP.controller('GlobalCtrl', function($scope) {
 UP.controller('LoginCtrl', function($scope) {
     
 });
-UP.controller('MainCtrl', function($scope) {
+UP.controller('MainCtrl', function($scope, $state, $ionicModal) {
     
     $scope.hello = function () {
         alert('hello');
     };
+
 });
 UP.controller('MoodCtrl', function($scope) {
     
