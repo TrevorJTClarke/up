@@ -16,22 +16,35 @@ UP.run(function($ionicPlatform) {
 })
 .config(function($stateProvider, $urlRouterProvider) {
 
-    // Learn more here: https://github.com/angular-ui/ui-router
+    // more here: https://github.com/angular-ui/ui-router
     $stateProvider
 
     // Shows the home startup page post tour
     .state('home', {
         url: '/home',
-        views: {
-            'home': {
-                templateUrl: 'templates/home.html',
-                controller: 'MainCtrl'
-            }
-        }
+        templateUrl: 'templates/home.html',
+        controller: 'MainCtrl'
     })
 
+    .state('profile', {
+        url: '/profile',
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
+    })
+
+    .state('postbox', {
+        url: '/postbox',
+        templateUrl: 'templates/postbox.html',
+        controller: 'PostboxCtrl'
+    })
+
+    .state('main', {
+        url: '/main',
+        abstract: true,
+        templateUrl: "templates/main.html"
+    })
     // shows the global 2 column feed
-    .state('global', {
+    .state('main.global', {
         url: '/global',
         views: {
             'global': {
@@ -40,14 +53,13 @@ UP.run(function($ionicPlatform) {
             }
         }
     })
-
-    // shows the global 2 column feed
-    .state('friends-feed', {
+    // shows the friends 2 column feed
+    .state('main.friends', {
         url: '/friends',
         views: {
             'friends': {
-                templateUrl: 'templates/friends-feed.html',
-                controller: 'FriendsFeedCtrl'
+                templateUrl: 'templates/friends.html',
+                controller: 'FriendsCtrl'
             }
         }
     })
@@ -56,66 +68,38 @@ UP.run(function($ionicPlatform) {
     // TODO: SCRAP THESE ROUTES
     .state('create', {
         url: '/create',
-        views: {
-            'create': {
-                templateUrl: 'templates/create.html',
-                controller: 'CreateCtrl'
-            }
-        }
+        templateUrl: 'templates/create.html'
+        // controller: 'CreateCtrl'
     })
     .state('receive', {
         url: '/receive',
-        views: {
-            'receive': {
-                templateUrl: 'templates/receive.html',
-                controller: 'ReceiveCtrl'
-            }
-        }
+        templateUrl: 'templates/receive.html',
+        controller: 'ReceiveCtrl'
     })
     .state('mood', {
         url: '/mood',
-        views: {
-            'mood': {
-                templateUrl: 'templates/mood.html',
-                controller: 'MoodCtrl'
-            }
-        }
+        templateUrl: 'templates/mood.html',
+        controller: 'MoodCtrl'
     })
 
-    // // shows the creation modal screens
-    // .state('create', {
-    //     url: "/create",
-    //     abstract: true,
-    //     templateUrl: "templates/create.html"
-    // })
-    // .state('create.customize', {
-    //     url: '/customize',
-    //     views: {
-    //         'create-customize': {
-    //             templateUrl: 'create-customize.html',
-    //             controller: 'CreateCtrl'
-    //         }
-    //     }
-    // })
+    
+    // Standard routes
+    .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+    })
+    .state('signup', {
+        url: '/signup',
+        templateUrl: 'templates/signup.html',
+        controller: 'SignupCtrl'
+    })
 
-    // // shows the Receive modal screens
-    // .state('receive', {
-    //     url: "/receive",
-    //     abstract: true,
-    //     templateUrl: "templates/receive.html"
-    // });
-    // .state('receive.schedule', {
-    //     url: '/schedule',
-    //     views: {
-    //         'receive-schedule': {
-    //             templateUrl: 'receive-schedule.html',
-    //             controller: 'ReceiveCtrl'
-    //         }
-    //     }
-    // });
+
     ;
 
-    $urlRouterProvider.otherwise('/global');
+    // $urlRouterProvider.otherwise('/main/global');
+    $urlRouterProvider.otherwise('/home');
 
 });
 
@@ -123,19 +107,34 @@ UP.run(function($ionicPlatform) {
 UP.controller('CreateCtrl', function($scope) {
     
 });
-UP.controller('FriendsFeedCtrl', function($scope) {
+UP.controller('FriendsCtrl', function($scope) {
     
 });
 UP.controller('GlobalCtrl', function($scope) {
     
 });
+UP.controller('LoginCtrl', function($scope) {
+    
+});
 UP.controller('MainCtrl', function($scope) {
     
+    $scope.hello = function () {
+        alert('hello');
+    };
 });
 UP.controller('MoodCtrl', function($scope) {
     
 });
+UP.controller('PostboxCtrl', function($scope) {
+    
+});
+UP.controller('ProfileCtrl', function($scope) {
+    
+});
 UP.controller('ReceiveCtrl', function($scope) {
+    
+});
+UP.controller('SignupCtrl', function($scope) {
     
 });
 

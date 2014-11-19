@@ -98,8 +98,8 @@ UP.run(function($ionicPlatform) {
 
     ;
 
-    $urlRouterProvider.otherwise('/main/global');
-    // $urlRouterProvider.otherwise('/home');
+    // $urlRouterProvider.otherwise('/main/global');
+    $urlRouterProvider.otherwise('/home');
 
 });
 

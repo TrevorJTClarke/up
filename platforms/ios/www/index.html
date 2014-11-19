@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="upcourage">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -10,27 +10,10 @@
     <script src="cordova.js"></script>
     <script src="js/upcourage.js"></script>
 </head>
-<body ng-app="upcourage" animation="slide-left-right-ios7" class="platform-ios platform-cordova platform-webview">
+<body ng-controller="MainCtrl" animation="slide-left-right-ios7" class="platform-ios platform-cordova platform-webview">
     <ion-nav-bar class="bar-positive nav-title-slide-ios7">
         <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back"> Back </ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view></ion-nav-view>
-    <ion-tabs class="tabs-striped tabs-icon-top tabs-background-stabe tabs-light">
-        <ion-tab title="Global" icon="icon ion-earth" href="#/global">
-            <ion-nav-view name="global"></ion-nav-view>
-        </ion-tab>
-        <ion-tab title="Friends" icon="icon ion-person-stalker" href="#/friends">
-            <ion-nav-view name="friends"></ion-nav-view>
-        </ion-tab>
-        <ion-tab title="Create" icon="icon ion-wand" href="#/create">
-            <ion-nav-view name="create"></ion-nav-view>
-        </ion-tab>
-        <ion-tab title="Receive" icon="icon ion-bonfire" href="#/receive">
-            <ion-nav-view name="receive"></ion-nav-view>
-        </ion-tab>
-        <ion-tab title="Mood" icon="icon ion-contrast" href="#/mood">
-            <ion-nav-view name="mood"></ion-nav-view>
-        </ion-tab>
-    </ion-tabs>
 </body>
 </html>
