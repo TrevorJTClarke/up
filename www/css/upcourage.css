@@ -8921,7 +8921,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     padding: 10px; }
     .mood-manager .my-mood .current-mood {
       display: inline-block;
-      background: #26717F;
+      border: 2px solid #ABABAB;
       border-radius: 50%;
       width: 90px;
       height: 90px;
@@ -8942,17 +8942,54 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   .mood-manager ul {
     padding: 10px 12px; }
     .mood-manager ul .mood {
-      background: #333;
+      border: 1px solid #ABABAB;
       border-radius: 50%;
       display: inline-block;
-      margin: 0 2px 0 0;
+      margin: 0 5px 25px 0;
       width: 50px;
       height: 50px;
       line-height: 121px;
       text-align: center;
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 500;
       text-transform: uppercase; }
+
+.mood-color.md-happy {
+  background-color: #269;
+  background-image: linear-gradient(white 2px, transparent 2px), linear-gradient(90deg, white 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+.mood-color.md-excited {
+  background-color: #a0302c;
+  background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.5) 116px, rgba(0, 0, 0, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.5) 169px, rgba(0, 0, 0, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.5) 182px, rgba(0, 0, 0, 0.5) 232px, transparent 232px), repeating-linear-gradient(270deg, transparent, transparent 25px, rgba(0, 0, 0, 0.4) 25px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.5) 116px, rgba(0, 0, 0, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.5) 169px, rgba(0, 0, 0, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.5) 182px, rgba(0, 0, 0, 0.5) 232px, transparent 232px), repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 3px, transparent 3px, transparent 5px, rgba(0, 0, 0, 0.2) 5px); }
+.mood-color.md-calm {
+  background: radial-gradient(circle, transparent 20%, #0BF5FF 20%, #0BF5FF 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #0BF5FF 20%, #0BF5FF 80%, transparent 80%, transparent) 25px 25px, linear-gradient(rgba(255, 255, 255, 0.7) 4px, transparent 4px) 0 -2px, linear-gradient(90deg, rgba(255, 255, 255, 0.7) 4px, transparent 4px) -2px 0;
+  background-color: #0BF5FF;
+  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px; }
+.mood-color.md-imaginative {
+  background: linear-gradient(135deg, #E8D54B 25%, transparent 25%) -25px 0, linear-gradient(225deg, #E8D54B 25%, transparent 25%) -25px 0, linear-gradient(315deg, #E8D54B 25%, transparent 25%), linear-gradient(45deg, #E8D54B 25%, transparent 25%);
+  background-size: 50px 50px;
+  background-color: #FFF73B; }
+.mood-color.md-normal {
+  background: #56E85A; }
+.mood-color.md-stressed {
+  background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px; }
+.mood-color.md-unsettled {
+  background: radial-gradient(circle at 100% 50%, transparent 20%, rgba(255, 255, 255, 0.3) 21%, rgba(255, 255, 255, 0.3) 34%, transparent 35%, transparent), radial-gradient(circle at 0% 50%, transparent 20%, rgba(255, 255, 255, 0.3) 21%, rgba(255, 255, 255, 0.3) 34%, transparent 35%, transparent) 0 -25px;
+  background-color: #E8B426;
+  background-size: 37px 50px; }
+.mood-color.md-nervous {
+  background: linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #999 78%), linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), #444;
+  background-size: 16px 48px; }
+.mood-color.md-fearful {
+  background-color: #FF40A2;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255, 255, 255, 0.5) 15px, rgba(255, 255, 255, 0.5) 30px); }
+.mood-color.md-restless {
+  background-color: #5E3615;
+  background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 30px), linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+  background-size: 35px 60px; }
 
 .create-btn {
   position: relative; }

@@ -21,23 +21,14 @@
 </ion-tabs>
 <div class="mood-manager">
     <div class="my-mood">
-        <div class="current-mood"></div>
+        <div class="current-mood mood-color md-{{currentMood.color}}"></div>
         <div class="mood-specs">
             <h6>I'm feeling</h6>
-            <h3>Happy</h3>
-            <p>[hap-ee]: delighted, pleased, or glad, as over a particular thing</p>
+            <h3>{{currentMood.name}}</h3>
+            <p>[{{currentMood.info.pronounce}}]: {{currentMood.info.description}}</p>
         </div>
     </div>
     <ul>
-        <li class="mood">Happy</li>
-        <li class="mood">Sad</li>
-        <li class="mood">In Love</li>
-        <li class="mood">Tyrant</li>
-        <li class="mood">Sappy</li>
-        <li class="mood">Happy</li>
-        <li class="mood">Sad</li>
-        <li class="mood">In Love</li>
-        <li class="mood">Tyrant</li>
-        <li class="mood">Sappy</li>
+        <li ng-repeat="mood in moods" class="mood mood-color md-{{mood.color}}" ng-click="changeMood($index)">{{mood.name}}</li>
     </ul>
 </div>
