@@ -1,0 +1,32 @@
+.create-btn {
+    position: relative;
+
+    .icon {
+        position: relative;
+        color: $teal;
+        font-size: 50px;
+        height: 50px;
+        margin: -3px auto 0;
+
+        &:before {
+            z-index: 99;
+        }
+
+        &:after {
+            background: #FFF;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            left: 13px;
+            top: 7px;
+            width: 37px;
+            height: 37px;
+            z-index: -1;
+        }
+    }
+
+    &.tab-item-active {
+        border-color: #333 !important;
+        background-color: #333;
+    }
+}

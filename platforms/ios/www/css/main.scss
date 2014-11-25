@@ -1,8 +1,16 @@
 /**
  * UpCourage CSS files
  */
+// setup ionic css
+@import "scss/ionic.app.scss";
 
+// modules
 @import
-  // main layouts
+  "modules/mixins",
+  "modules/moods";
+
+// main layouts
+@import
+  "pages/tabs",
   "pages/main",
   "pages/home";

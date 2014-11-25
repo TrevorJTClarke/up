@@ -5,21 +5,21 @@
     <button class="button button-icon icon ion-person" ui-sref="profile"></button>
 </ion-nav-buttons>
 <ion-tabs class="tabs-striped tabs-icon-top tabs-background-stabe tabs-light">
-    <ion-tab title="Global" icon="icon ion-earth" href="#/main/global">
+    <ion-tab title="Global" icon="icon ion-earth" href="#/main/global" on-select="hideMoodPicker()">
         <ion-nav-view name="global"></ion-nav-view>
     </ion-tab>
-    <ion-tab title="Friends" icon="icon ion-person-stalker" href="#/main/friends">
+    <ion-tab title="Friends" icon="icon ion-person-stalker" href="#/main/friends" on-select="hideMoodPicker()">
         <ion-nav-view name="friends"></ion-nav-view>
     </ion-tab>
-    <ion-tab class="create-btn" icon="icon ion-plus-circled" href="#/main/create">
+    <ion-tab class="create-btn" icon="icon ion-plus-circled" href="#/main/create" on-select="hideMoodPicker()">
         <ion-nav-view name="create"></ion-nav-view>
     </ion-tab>
-    <ion-tab title="Receive" icon="icon ion-calendar" href="#/main/receive">
+    <ion-tab title="Receive" icon="icon ion-calendar" href="#/main/receive" on-select="hideMoodPicker()">
         <ion-nav-view name="receive"></ion-nav-view>
     </ion-tab>
-    <ion-tab title="Mood" icon="icon ion-contrast" on-select="hello()"></ion-tab>
+    <ion-tab title="Mood" icon="icon ion-contrast" ng-click="toggleMoodPicker()" ng-class="{'activated': showMoodPicker }"></ion-tab>
 </ion-tabs>
-<div class="mood-manager">
+<div class="mood-manager" ng-class="{ show: showMoodPicker }">
     <div class="my-mood">
         <div class="current-mood mood-color md-{{currentMood.color}}"></div>
         <div class="mood-specs">
