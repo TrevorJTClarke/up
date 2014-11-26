@@ -10,7 +10,8 @@ UP.run(function($ionicPlatform) {
         }
         if(window.StatusBar) {
             // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
+            // StatusBar.styleDefault();
+            StatusBar.hide();
         }
     });
 })
@@ -18,6 +19,13 @@ UP.run(function($ionicPlatform) {
 
     // more here: https://github.com/angular-ui/ui-router
     $stateProvider
+
+    // Shows the home startup page post tour
+    .state('welcome', {
+        url: '/welcome',
+        templateUrl: 'templates/welcome.html',
+        controller: 'MainCtrl'
+    })
 
     // Shows the home startup page post tour
     .state('home', {
@@ -103,6 +111,7 @@ UP.run(function($ionicPlatform) {
 
     // $urlRouterProvider.otherwise('/main/global');
     $urlRouterProvider.otherwise('/home');
+    // $urlRouterProvider.otherwise('/welcome');
 
 });
 
@@ -110,10 +119,11 @@ UP.run(function($ionicPlatform) {
 UP.controller('CreateCtrl', function($scope) {
     
 });
-UP.controller('FriendsCtrl', function($scope) {
-    
+UP.controller('FriendsCtrl', function($scope, Demo) {
+    $scope.friends = Demo.friends;
 });
-UP.controller('GlobalCtrl', function($scope) {
+UP.controller('GlobalCtrl', function($scope, Demo) {
+    $scope.global = Demo.global;
     
 });
 UP.controller('LoginCtrl', function($scope) {
@@ -146,8 +156,8 @@ UP.controller('MainCtrl', function($scope, $state, $ionicModal, Moods) {
 UP.controller('MoodCtrl', function($scope) {
     
 });
-UP.controller('PostboxCtrl', function($scope) {
-    
+UP.controller('PostboxCtrl', function($scope, Demo) {
+    $scope.postbox = Demo.postbox;
 });
 UP.controller('ProfileCtrl', function($scope) {
     
@@ -159,6 +169,60 @@ UP.controller('SignupCtrl', function($scope) {
     
 });
 
+/**
+* A service for pulling demo data
+*/
+UP.value('Demo', {
+    global: [{
+        poster: "img/demo/1.jpg"
+    },{
+        poster: "img/demo/2.jpg"
+    },{
+        poster: "img/demo/3.jpg"
+    },{
+        poster: "img/demo/4.jpg"
+    },{
+        poster: "img/demo/5.jpg"
+    },{
+        poster: "img/demo/6.jpg"
+    },{
+        poster: "img/demo/7.jpg"
+    },{
+        poster: "img/demo/8.jpg"
+    },{
+        poster: "img/demo/9.jpg"
+    },{
+        poster: "img/demo/10.jpg"
+    }],
+    friends: [{
+        poster: "img/demo/2.jpg"
+    },{
+        poster: "img/demo/3.jpg"
+    },{
+        poster: "img/demo/4.jpg"
+    },{
+        poster: "img/demo/5.jpg"
+    },{
+        poster: "img/demo/6.jpg"
+    },{
+        poster: "img/demo/7.jpg"
+    },{
+        poster: "img/demo/8.jpg"
+    },{
+        poster: "img/demo/9.jpg"
+    },{
+        poster: "img/demo/10.jpg"
+    }],
+    postbox: [{
+        poster: "img/demo/2.jpg"
+    },{
+        poster: "img/demo/3.jpg"
+    },{
+        poster: "img/demo/4.jpg"
+    },{
+        poster: "img/demo/5.jpg"
+    }]
+});
 /**
 * A service for pulling feed data
 */

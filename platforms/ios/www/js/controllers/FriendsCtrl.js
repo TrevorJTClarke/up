@@ -1,3 +1,3 @@
-UP.controller('FriendsCtrl', function($scope) {
-    
+UP.controller('FriendsCtrl', function($scope, Demo) {
+    $scope.friends = Demo.friends;
 });

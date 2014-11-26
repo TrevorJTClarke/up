@@ -1,0 +1,24 @@
+<ion-view title="Welcome" hide-nav-bar="true">
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+        <ion-slide>
+            <div class="box blue">
+                <h1>Welcome</h1>
+                <p>This is an intro page trevor</p>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box yellow">
+                <h1>to </h1>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="box blue">
+                <h1>UpCourage!</h1>
+            </div>
+        </ion-slide>
+    </ion-slide-box>
+    <div class="welcome-extras">
+        <button class="button button-block button-stable" ui-sref="login">Login</button>
+        <button class="button button-block button-stable button-skip" ui-sref="home">Skip Tour</button>
+    </div>
+</ion-view>

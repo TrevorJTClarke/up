@@ -8,7 +8,8 @@ UP.run(function($ionicPlatform) {
         }
         if(window.StatusBar) {
             // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
+            // StatusBar.styleDefault();
+            StatusBar.hide();
         }
     });
 })
@@ -16,6 +17,13 @@ UP.run(function($ionicPlatform) {
 
     // more here: https://github.com/angular-ui/ui-router
     $stateProvider
+
+    // Shows the home startup page post tour
+    .state('welcome', {
+        url: '/welcome',
+        templateUrl: 'templates/welcome.html',
+        controller: 'MainCtrl'
+    })
 
     // Shows the home startup page post tour
     .state('home', {
@@ -101,5 +109,6 @@ UP.run(function($ionicPlatform) {
 
     // $urlRouterProvider.otherwise('/main/global');
     $urlRouterProvider.otherwise('/home');
+    // $urlRouterProvider.otherwise('/welcome');
 
 });

@@ -5,25 +5,13 @@
     <ion-content class="padding">
         <div class="list card">
             <div class="item item-image">
-                <img src="http://placekitten.com/320/240">
-            </div>
-            <div class="item item-text-wrap">
-                unread encouragement card
+                <img src="img/demo/1.jpg">
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="item item-image">
-                        <img src="http://placekitten.com/320/240">
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="item item-image">
-                        <img src="http://placekitten.com/320/240">
-                    </div>
+        <div class="col col-50" ng-repeat="item in postbox">
+            <div class="card">
+                <div class="item item-image">
+                    <img ng-src="{{item.poster}}" />
                 </div>
             </div>
         </div>
