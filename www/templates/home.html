@@ -1,10 +1,21 @@
 <ion-view title="UpCourage">
     <ion-content class="padding">
-        <div class="list card">
+        <div class="swipe-area">
+            <swipe-cards>
+                <swipe-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)">
+                    <div ng-controller="CardCtrl">
+                        <div class="image">
+                            <img ng-src="{{card.poster}}">
+                        </div>
+                    </div>
+                </swipe-card>
+            </swipe-cards>
+        </div>
+        <!-- <div class="list card">
             <div class="item item-image">
                 <img src="img/demo/1.jpg">
             </div>
-        </div>
+        </div> -->
         <hr>
         <div class="home-extras">
             <button class="button button-block button-positive" ui-sref="main.global">Get Encouraged</button>

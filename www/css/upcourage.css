@@ -9040,6 +9040,9 @@ body,
   background: #f2f2f2;
   background-color: #f2f2f2; }
 
+.pane {
+  z-index: 9; }
+
 hr {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
   border-left: 0px;
@@ -9074,6 +9077,14 @@ hr {
     vertical-align: bottom; }
     .welcome-extras .button.button-skip {
       margin-left: 5px; }
+
+/**
+ * Swipe Cards
+ * --------------------------------------------------
+ */
+.swipe-area {
+  display: block;
+  height: 200px; }
 
 /**
  * Slide Box

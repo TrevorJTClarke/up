@@ -1,0 +1,52 @@
+.swipe-cards {
+  position: fixed;
+  z-index: 999999999999999999999999999;
+}
+
+.swipe-card {
+  display: none;
+  position: fixed;
+  -webkit-transform: scale(1,1);
+  left: 50%;
+  top: 42%;
+  width: 300px;
+  /*height: 300px;*/
+  margin-left: -150px;
+  margin-top: -150px;
+  box-sizing: border-box;
+  background-color: rgb(255,255,255);
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-animation-fill-mode: forwards;
+  z-index: 99999;
+}
+.swipe-card .image {
+  overflow: hidden;
+  margin-bottom: -5px;
+  /*max-height: 210px;*/
+}
+.swipe-card .image img {
+  width: 100%;
+  border-radius: 0px 0px 4px 4px;
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    -webkit-transform: scale(0.7,0.7);
+  }
+  70% {
+    -webkit-transform: scale(1.05,1.05);
+  }
+  100% {
+    -webkit-transform: scale(1,1);
+  }
+}
+
+.swipe-card.pop-in-start {
+  -webkit-transform: scale(0.7,0.7);
+  z-index: 999999999;
+}
+.swipe-card.pop-in {
+  -webkit-animation: bounceIn 0.4s ease-out;
+  z-index: 999999999;
+}
